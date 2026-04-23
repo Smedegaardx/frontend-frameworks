@@ -1,5 +1,5 @@
-import Singleproductsection from "@/components/Singleproductsection";
-import Reviewsection from "@/components/Reviewsection";
+import Singleproductsection from "@/app/components/Singleproductsection";
+import Reviewsection from "@/app/components/Reviewsection";
 
 async function getData() {
   const response = await fetch("https://dummyjson.com/products");
