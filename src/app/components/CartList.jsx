@@ -40,7 +40,7 @@ const CartList = ({ cart, removeFromCart, addToCart }) => {
           <p className="font-text font-bold">Total: ${total.toFixed(2)}</p>
         </>
       )}
-      <PaymentButton />
+      <PaymentButton cart={cart} />
     </div>
   );
 };

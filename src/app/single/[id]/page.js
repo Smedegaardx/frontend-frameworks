@@ -6,16 +6,20 @@ async function getData() {
   return response.json();
 }
 
-export default async function Single() {
+export default async function Single({ params }) {
+  const { id } = await params;
   const data = await getData();
-  const id = 1;
 
-  const product = data.products.find((p) => p.id === id);
+  const product = data.products.find((p) => p.id === Number(id));
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
 
   return (
     <div className="mx-20 mt-20">
-      <Singleproductsection product={product}></Singleproductsection>
-      <Reviewsection product={product}></Reviewsection>
+      <Singleproductsection product={product} />
+      <Reviewsection product={product} />
     </div>
   );
 }
