@@ -2,7 +2,9 @@ import Singleproductsection from "@/app/components/Singleproductsection";
 import Reviewsection from "@/app/components/Reviewsection";
 
 async function getData() {
-  const response = await fetch("https://dummyjson.com/products");
+  const response = await fetch("https://dummyjson.com/products", {
+    cache: "force-cache",
+  });
   return response.json();
 }
 
