@@ -1,14 +1,21 @@
 import Singleproductsection from "@/components/Singleproductsection";
 import Reviewsection from "@/components/Reviewsection";
-fetch("https://dummyjson.com/products")
-  .then((res) => res.json())
-  .then(console.log);
 
-export default function Single() {
+async function getData() {
+  const response = await fetch("https://dummyjson.com/products");
+  return response.json();
+}
+
+export default async function Single() {
+  const data = await getData();
+  const id = 1;
+
+  const product = data.products.find((p) => p.id === id);
+
   return (
     <div className="mx-20 mt-20">
-      <Singleproductsection></Singleproductsection>
-      <Reviewsection></Reviewsection>
+      <Singleproductsection product={product}></Singleproductsection>
+      <Reviewsection product={product}></Reviewsection>
     </div>
   );
 }
