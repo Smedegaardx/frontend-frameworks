@@ -59,7 +59,7 @@ const CategoryButton = ({ onCategorySelect }) => {
       </button>
 
       {open && (
-        <div className="absolute left-0 mt-2 min-w-[180px] bg-white rounded-xl shadow-lg border border-gray-100 z-50 overflow-hidden">
+        <div className="absolute left-0 mt-2 min-w-45 bg-white rounded-xl shadow-lg border border-gray-100 z-50 overflow-hidden">
           {loading ? (
             <div className="px-4 py-3 text-sm text-gray-500">
               Henter kategorier...

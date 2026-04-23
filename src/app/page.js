@@ -1,12 +1,18 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
-    <div>
-      <h1 className="font-hero text-5xl"> Jeg er stack Sans notch hej</h1>
-      <h1 className="font-text text-2xl">Jeg er Inter hej</h1>
-      <Link href={`/single`}>single</Link>
+    <div className="bg-[#EEF0EB] h-[78vh] flex flex-col items-center justify-center">
+      <div className="flex flex-row items-center">
+        <h1 className="text-4xl font-bold text-[#224f98]">Velkommen til</h1>
+        <Image src="/simpelshop.png" alt="hero" width={500} height={0} />
+      </div>
+      <a
+        href="/products"
+        className="mt-4 px-6 py-3 bg-[#153243] text-white rounded-full hover:bg-[#1a3a4d] font-text"
+      >
+        Se vores produkter
+      </a>
     </div>
   );
 }
