@@ -1,4 +1,6 @@
-const productinfo = ({ product }) => {
+import BuyButton from "./BuyButton";
+
+const productinfo = ({ product, onAddToCart }) => {
   return (
     <div className="flex flex-col justify-between">
       <div>
@@ -7,6 +9,7 @@ const productinfo = ({ product }) => {
       </div>
       <div>
         <h2 className="font-text text-2xl"> Price: {product.price} $USD</h2>
+        <BuyButton onAddToCart={onAddToCart}></BuyButton>
       </div>
     </div>
   );
