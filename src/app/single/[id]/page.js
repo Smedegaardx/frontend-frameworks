@@ -8,6 +8,14 @@ async function getData() {
   return response.json();
 }
 
+export async function generateStaticParams() {
+  const data = await getData();
+
+  return data.products.map((product) => ({
+    id: String(product.id),
+  }));
+}
+
 export default async function Single({ params }) {
   const { id } = await params;
   const data = await getData();
