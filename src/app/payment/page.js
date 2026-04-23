@@ -1,5 +1,12 @@
-const payment = () => {
-  return <div>Betaling</div>;
-};
+"use client";
 
-export default payment;
+import { Suspense } from "react";
+import CartPage from "../components/CartPage";
+
+export default function PaymentPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CartPage />
+    </Suspense>
+  );
+}
